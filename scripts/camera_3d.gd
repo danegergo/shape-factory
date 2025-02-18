@@ -2,9 +2,6 @@ extends Camera3D
 
 const CAMERA_TURN_SPEED = 200
 @onready var player: CharacterBody3D = $".."
-
-func _ready():
-	pass
 	
 func look_updown_rotation(new_rotation = 0):
 	var toReturn = self.get_rotation() + Vector3(new_rotation, 0, 0)
