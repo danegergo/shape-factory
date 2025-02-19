@@ -4,11 +4,12 @@ extends StaticBody3D
 
 var is_open := false
 
-func toggle_door() -> void:
-	if animation_player.is_playing():
-		return
-	if !is_open:
+func open_door() -> void:
+	if !animation_player.is_playing() and !is_open:
 		animation_player.play("open")
-	else:
+	is_open = true
+
+func close_door() -> void:
+	if !animation_player.is_playing() and is_open:
 		animation_player.play("close")
-	is_open = !is_open
+	is_open = false

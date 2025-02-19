@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ococlv6nppei" path="res://player.tscn" id="1_3ds22"]
 [ext_resource type="PackedScene" uid="uid://66cq81pae46e" path="res://conveyor_belt/conveyor_belt.tscn" id="2_g8fnw"]
-[ext_resource type="PackedScene" uid="uid://cy4mf8342x1td" path="res://cube/cube.tscn" id="3_cwge3"]
+[ext_resource type="PackedScene" uid="uid://cy4mf8342x1td" path="res://item/item.tscn" id="3_cwge3"]
 [ext_resource type="PackedScene" uid="uid://d3pfwmklj5onn" path="res://fabricator/fabricator.tscn" id="4_f16n8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_asw3o"]

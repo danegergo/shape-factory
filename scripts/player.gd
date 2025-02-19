@@ -8,7 +8,7 @@ class_name Player
 @export var SPEED := 15.0
 
 var ray_cast_hit: Node3D
-var is_holding_item := false 
+var item_currently_held: Node3D
 var is_using_lever := false
 
 func _process(delta: float) -> void:
@@ -39,7 +39,7 @@ func set_player_velocity() -> void:
 
 func handle_use_action() -> void:
 	ray_cast_hit = ray_cast_3d.get_collider()
-	if !is_holding_item:
+	if !item_currently_held:
 		perform_action()
 	else:
 		drop_item()
@@ -47,22 +47,21 @@ func handle_use_action() -> void:
 func perform_action():
 	if ray_cast_hit:
 		if ray_cast_hit.collision_layer == 2:
-			ray_cast_hit.reparent(hold_point)
-			ray_cast_hit.position = Vector3.ZERO
-			ray_cast_hit.freeze = true
-			is_holding_item = true
+			# Pick up item
+			ray_cast_hit.move_to_node(hold_point, true)
+			item_currently_held = ray_cast_hit
 		elif ray_cast_hit.collision_layer == 4:
-			ray_cast_hit.get_parent().get_parent().toggle_door()
+			# Open fabricator door
+			ray_cast_hit.get_parent().get_parent().open_door()
 		elif ray_cast_hit.collision_layer == 8:
+			# Start pulling lever
 			is_using_lever = true
 
 func drop_item() -> void:
 	if ray_cast_hit and ray_cast_hit is Area3D:
 			print(ray_cast_hit)
-	var object_held: RigidBody3D = hold_point.get_child(0)
-	object_held.reparent(main_scene)
-	object_held.freeze = false
-	is_holding_item = false
+	item_currently_held.drop_item()
+	item_currently_held = null
 
 func handle_lever_pull(delta: float) -> void:
 	var rotation_angle := -Input.get_last_mouse_velocity().y / 100 * delta
