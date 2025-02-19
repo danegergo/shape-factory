@@ -13,7 +13,7 @@ func look_leftright_rotation(new_rotation = 0):
 	return player.get_rotation() + Vector3(0, new_rotation, 0)
 
 func _input(event):
-	if not event is InputEventMouseMotion:
+	if not event is InputEventMouseMotion or player.is_using_lever:
 		return
 
 	player.set_rotation(look_leftright_rotation(event.relative.x / -CAMERA_TURN_SPEED))
