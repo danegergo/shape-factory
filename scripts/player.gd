@@ -8,7 +8,7 @@ class_name Player
 @export var SPEED := 15.0
 
 var ray_cast_hit: Node3D
-var item_currently_held: Node3D
+var item_currently_held: Item
 var is_using_lever := false
 
 func _process(delta: float) -> void:
@@ -50,17 +50,20 @@ func perform_action():
 			# Pick up item
 			ray_cast_hit.move_to_node(hold_point, true)
 			item_currently_held = ray_cast_hit
+			ray_cast_3d.add_exception(item_currently_held)
 		elif ray_cast_hit.collision_layer == 4:
 			# Open fabricator door
-			ray_cast_hit.get_parent().get_parent().open_door()
+			ray_cast_hit.owner.open_door()
 		elif ray_cast_hit.collision_layer == 8:
 			# Start pulling lever
 			is_using_lever = true
 
 func drop_item() -> void:
-	if ray_cast_hit and ray_cast_hit is Area3D:
-			print(ray_cast_hit)
-	item_currently_held.drop_item()
+	if ray_cast_hit and ray_cast_hit.collision_layer == 35 and ray_cast_hit.is_open: # if fabricator clicked
+		item_currently_held.move_to_node(ray_cast_hit.find_child("ItemPlacePoint"))
+	else:
+		item_currently_held.drop_item()
+	ray_cast_3d.remove_exception(item_currently_held)
 	item_currently_held = null
 
 func handle_lever_pull(delta: float) -> void:
@@ -68,3 +71,5 @@ func handle_lever_pull(delta: float) -> void:
 	var final_lever_rotation_z := ray_cast_hit.rotation_degrees.z + rad_to_deg(rotation_angle)
 	if final_lever_rotation_z >= -70 and final_lever_rotation_z <= 0.001:
 		ray_cast_hit.rotate_z(rotation_angle)
+	elif final_lever_rotation_z < -70:
+		ray_cast_hit.owner.fabricate()

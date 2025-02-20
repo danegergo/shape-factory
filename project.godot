@@ -64,6 +64,10 @@ use={
 ]
 }
 
+[physics]
+
+common/physics_ticks_per_second=90
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
