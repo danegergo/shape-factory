@@ -1,10 +1,17 @@
 extends RigidBody3D
 class_name Item
 
+@onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
+@onready var box_outline: MeshInstance3D = $MeshInstance3D/BoxOutline
+@onready var prism_outline: MeshInstance3D = $MeshInstance3D/PrismOutline
+
 var is_picked_up := false
+var is_highlighted := false
 var conveyor_count := 0
 var conveyor_direction: Vector3
 var target_node: Node3D
+var shape: String
+var color: String
 
 func _physics_process(delta: float) -> void:
 	if conveyor_count:
@@ -26,3 +33,23 @@ func drop_item() -> void:
 	self.gravity_scale = 1
 	is_picked_up = false
 	target_node = null
+
+func highlight() -> void:
+	if is_highlighted or is_picked_up:
+		return
+		
+	if mesh_instance_3d.mesh is BoxMesh:
+		box_outline.visible = true
+	elif mesh_instance_3d.mesh is PrismMesh:
+		prism_outline.visible = true
+	is_highlighted = true
+		
+func un_highlight() -> void:
+	if !is_highlighted:
+		return
+		
+	if mesh_instance_3d.mesh is BoxMesh:
+		box_outline.visible = false
+	elif mesh_instance_3d.mesh is PrismMesh:
+		prism_outline.visible = false
+	is_highlighted = false

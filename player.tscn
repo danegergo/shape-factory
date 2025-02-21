@@ -23,20 +23,26 @@ script = ExtResource("2_5syds")
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.709371)
-target_position = Vector3(0, 0, -10)
+target_position = Vector3(0, 0, -6.33)
 collision_mask = 62
+debug_shape_custom_color = Color(0.701836, 0.0278101, 1.92523e-07, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_d3s2i")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(5.38, 0, 0, 0, 5.38, 0, 0, 0, 5.38, 0, 0, 0)
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_knh8o")
 
 [node name="Crosshair" parent="." instance=ExtResource("2_7anvx")]
+crosshairThickness = 5.0
+crosshairSize = 0.0
+crosshairColor = Color(1, 1, 1, 1)
+crosshairDot = true
 
 [node name="HoldPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.83491, -4.1683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.83491, -3.70906)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -60,3 +66,6 @@ grow_horizontal = 2
 grow_vertical = 0
 value = 100.0
 show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

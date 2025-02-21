@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bqsna0yejra6t"
+uid="uid://cicfso31lpuvk"
 path="res://.godot/imported/fabricator.glb-efa03b56ff3c6d30dc24ff62425606be.scn"
 
 [deps]
@@ -31,6 +31,21 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "res://materials/Material.tres"
+},
+"Material.002": {
+"use_external/enabled": true,
+"use_external/path": "res://materials/Material.002.tres"
+},
+"Material.004": {
+"use_external/enabled": true,
+"use_external/path": "res://materials/Material.004.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

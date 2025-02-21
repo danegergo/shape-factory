@@ -1,13 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://cy4mf8342x1td"]
+[gd_scene load_steps=8 format=4 uid="uid://cy4mf8342x1td"]
 
 [ext_resource type="Script" path="res://item/item.gd" id="1_48e73"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqo2f"]
-albedo_color = Color(0.953708, 0.531916, 0.259195, 1)
-metallic = 1.0
-roughness = 0.0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mds6"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_lwuob"]
+[sub_resource type="PrismMesh" id="PrismMesh_5d1uf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mjoo"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_slegr"]
+_surfaces = [{
+"aabb": AABB(-0.528867, -0.528867, -0.528867, 1.05773, 1.05773, 1.05773),
+"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAEAAIAAgAEAAYAAQAFAAMAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAAUABIAEgAUABYAEQAVABMAEwAVABcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("3GMHv9xjBz/cYwc/3GMHP9xjBz/cYwe/3GMHP9xjBz/cYwc/3GMHv9xjBz/cYwe/3GMHv9xjB7/cYwc/3GMHP9xjB7/cYwe/3GMHP9xjB7/cYwc/3GMHv9xjB7/cYwe/3GMHP9xjBz/cYwc/3GMHv9xjBz/cYwe/3GMHP9xjBz/cYwe/3GMHv9xjBz/cYwc/3GMHP9xjB7/cYwc/3GMHv9xjB7/cYwe/3GMHP9xjB7/cYwe/3GMHv9xjB7/cYwc/3GMHP9xjBz/cYwc/3GMHv9xjB7/cYwc/3GMHv9xjBz/cYwc/3GMHP9xjB7/cYwc/3GMHP9xjBz/cYwe/3GMHv9xjB7/cYwe/3GMHv9xjBz/cYwe/3GMHP9xjB7/cYwe//3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
+}]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rqn71"]
+_surfaces = [{
+"aabb": AABB(-0.526726, -0.529881, -0.530773, 1.05345, 1.06566, 1.06155),
+"attribute_data": PackedByteArray("q6oqPgAAAABWVVU/AAAAAKuqKj4AAAAAVlVVPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqio/AAAAPwAAgD8AAAA/q6oqPwAAgD8AAIA/AACAPw=="),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AgAEAAYAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAASABEAEQASABMA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("VUmHvPcoCT+74Ac/VEmHvPcoCT+74Ae/VUmHvPcoCT+74Ac/VEmHvPcoCT+74Ae/htcGv0OmB79Dpgc/htcGP0OmB79Dpge/htcGP0OmB79Dpgc/htcGv0OmB79Dpge/VUmHvPcoCT+74Ac/VEmHvPcoCT+74Ae/VEmHvPcoCT+74Ae/VUmHvPcoCT+74Ac/htcGP0OmB79Dpgc/htcGv0OmB79Dpge/htcGP0OmB79Dpge/htcGv0OmB79Dpgc/htcGv0OmB79Dpgc/htcGP0OmB79Dpgc/htcGv0OmB79Dpge/htcGP0OmB79Dpge//3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v1TVqqr/////qiqqqv9//79U1aqq/////6oqqqr/f/+/VNWqqv////+qKqqq/3//v1TVqqr/////qiqqqv9//78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vw==")
+}]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o57r4"]
 
@@ -19,9 +44,19 @@ script = ExtResource("1_48e73")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.758997, 0)
-material_override = SubResource("StandardMaterial3D_cqo2f")
-mesh = SubResource("BoxMesh_lwuob")
+material_override = SubResource("StandardMaterial3D_1mds6")
+mesh = SubResource("PrismMesh_5d1uf")
 skeleton = NodePath("")
+
+[node name="BoxOutline" type="MeshInstance3D" parent="MeshInstance3D"]
+visible = false
+material_override = SubResource("StandardMaterial3D_0mjoo")
+mesh = SubResource("ArrayMesh_slegr")
+
+[node name="PrismOutline" type="MeshInstance3D" parent="MeshInstance3D"]
+visible = false
+material_override = SubResource("StandardMaterial3D_0mjoo")
+mesh = SubResource("ArrayMesh_rqn71")
 
 [node name="AABB_CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.758997, 0)

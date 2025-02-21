@@ -4,9 +4,6 @@ extends StaticBody3D
 
 @export var CONVEYOR_SPEED := 5.0
 
-#func _physics_process(delta: float) -> void:
-	#move_objects_on_belt(delta)
-	
 func _on_belt_area_body_entered(item: Item) -> void:
 	item.conveyor_direction = self.transform.basis.x * CONVEYOR_SPEED
 	item.conveyor_count += 1

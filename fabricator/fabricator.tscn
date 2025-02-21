@@ -1,7 +1,9 @@
-[gd_scene load_steps=28 format=4 uid="uid://d3pfwmklj5onn"]
+[gd_scene load_steps=30 format=4 uid="uid://d3pfwmklj5onn"]
 
 [ext_resource type="Texture2D" uid="uid://c8jwsgmkl134a" path="res://fabricator/fabricator_Untitled.png" id="1_2gd3m"]
 [ext_resource type="Script" path="res://scripts/fabricator.gd" id="1_08dwg"]
+[ext_resource type="Material" uid="uid://byel40iv30re8" path="res://materials/material2.tres" id="2_5hok7"]
+[ext_resource type="Material" uid="uid://c1l6qvkid4c5r" path="res://materials/material1.tres" id="3_bsnxw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a6bci"]
 size = Vector3(8.659, 12.154, 0.266)
@@ -292,13 +294,14 @@ shape = SubResource("BoxShape3D_fiqqc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.19831, 0)
 
 [node name="Cube" type="MeshInstance3D" parent="fabricator"]
+material_override = ExtResource("2_5hok7")
 mesh = SubResource("ArrayMesh_q1jfq")
-skeleton = NodePath("")
 
 [node name="Door" type="StaticBody3D" parent="fabricator"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0110228, -0.107835, 0)
 
 [node name="Door" type="MeshInstance3D" parent="fabricator/Door"]
+material_override = ExtResource("3_bsnxw")
 mesh = SubResource("ArrayMesh_cv0h5")
 skeleton = NodePath("")
 
