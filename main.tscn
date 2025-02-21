@@ -40,10 +40,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.77698, 3.72956, -19.7613)
 [node name="Belts" type="Node3D" parent="."]
 
 [node name="ConveyorBelt" parent="Belts" instance=ExtResource("2_g8fnw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -19.863)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83734, 0, -19.863)
 
 [node name="ConveyorBelt2" parent="Belts" instance=ExtResource("2_g8fnw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7823, 1.95313e-06, -19.8626)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.144, 0, -19.863)
 
 [node name="Fabricator" parent="." instance=ExtResource("4_f16n8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6664, 0, 2.80276)

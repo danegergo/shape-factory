@@ -15,6 +15,7 @@ radius = 0.285
 collision_layer = 16384
 floor_constant_speed = true
 script = ExtResource("1_ghbhf")
+SPINT_RECHARGE_RATE = 0.2
 
 [node name="Camera3D" type="Camera3D" parent="."]
 current = true
@@ -36,3 +37,26 @@ mesh = SubResource("CapsuleMesh_knh8o")
 
 [node name="HoldPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.83491, -4.1683)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1800.0
+offset_bottom = 1012.0
+
+[node name="SprintBar" type="ProgressBar" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -92.0
+offset_right = 220.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 100.0
+show_percentage = false

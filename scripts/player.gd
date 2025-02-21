@@ -4,8 +4,11 @@ class_name Player
 @onready var ray_cast_3d: RayCast3D = $Camera3D/RayCast3D
 @onready var hold_point: Node3D = $HoldPoint
 @onready var main_scene: Node3D = $".."
+@onready var sprint_bar: ProgressBar = %SprintBar
 
 @export var SPEED := 15.0
+@export var SPINT_USE_RATE := 0.5
+@export var SPINT_RECHARGE_RATE := 0.5
 
 var ray_cast_hit: Node3D
 var item_currently_held: Item
@@ -30,12 +33,18 @@ func _physics_process(delta: float) -> void:
 func set_player_velocity() -> void:
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var sprint_multiplier := 1.5 if (int(Input.is_action_pressed("sprint")) * int(sprint_bar.value > 0)) else 1.0
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * sprint_multiplier * SPEED
+		velocity.z = direction.z * sprint_multiplier * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+	
+	if sprint_multiplier > 1.0:
+		sprint_bar.value -= SPINT_USE_RATE
+	elif sprint_bar.value < 100:
+		sprint_bar.value += SPINT_RECHARGE_RATE
 
 func handle_use_action() -> void:
 	ray_cast_hit = ray_cast_3d.get_collider()
