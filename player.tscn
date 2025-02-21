@@ -5,12 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://iwlpamd20oko" path="res://addons/customizableCrosshair/crosshair/crosshair.tscn" id="2_7anvx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d3s2i"]
-radius = 3.0
+radius = 1.55069
 height = 10.7583
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_knh8o"]
+radius = 0.285
 
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 16384
 floor_constant_speed = true
 script = ExtResource("1_ghbhf")
 
@@ -33,4 +35,4 @@ mesh = SubResource("CapsuleMesh_knh8o")
 [node name="Crosshair" parent="." instance=ExtResource("2_7anvx")]
 
 [node name="HoldPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.36958, -4.66928)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.83491, -4.1683)

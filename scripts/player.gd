@@ -56,7 +56,8 @@ func perform_action():
 			ray_cast_hit.owner.open_door()
 		elif ray_cast_hit.collision_layer == 8:
 			# Start pulling lever
-			is_using_lever = true
+			if ray_cast_hit.owner.is_open:
+				is_using_lever = true
 
 func drop_item() -> void:
 	if ray_cast_hit and ray_cast_hit.collision_layer == 35 and ray_cast_hit.is_open: # if fabricator clicked

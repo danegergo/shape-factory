@@ -1,10 +1,10 @@
 [gd_scene load_steps=28 format=4 uid="uid://d3pfwmklj5onn"]
 
 [ext_resource type="Texture2D" uid="uid://c8jwsgmkl134a" path="res://fabricator/fabricator_Untitled.png" id="1_2gd3m"]
-[ext_resource type="Script" path="res://fabricator.gd" id="1_08dwg"]
+[ext_resource type="Script" path="res://scripts/fabricator.gd" id="1_08dwg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a6bci"]
-size = Vector3(8.659, 12.1539, 0.001)
+size = Vector3(8.659, 12.154, 0.266)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q0821"]
 size = Vector3(7.08128, 3.09399, 0.001)
@@ -24,25 +24,6 @@ size = Vector3(0.001, 5.59982, 3.49951)
 [sub_resource type="BoxShape3D" id="BoxShape3D_tli5c"]
 size = Vector3(4.94089, 5.37085, 0.1)
 
-[sub_resource type="Animation" id="Animation_8crsg"]
-resource_name = "open"
-length = 2.5
-step = 0.1
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("fabricator/OpenButton/Mesh")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 9.51848, 0, 0.0413613, 0.3, 1, 9.42, 0, 0.041, 0.6, 1, 9.518, 0, 0.041)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("fabricator/Door")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0.6, 1, 0.0110228, -0.107835, 0, 2.5, 1, 0.011, 6, 0)
-
 [sub_resource type="Animation" id="Animation_vsqe4"]
 resource_name = "close"
 length = 9.8
@@ -61,6 +42,25 @@ tracks/1/path = NodePath("fabricator/Door")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0.011, 6, 0, 1.9, 1, 0.0110228, -0.107835, 0)
+
+[sub_resource type="Animation" id="Animation_8crsg"]
+resource_name = "open"
+length = 2.5
+step = 0.1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fabricator/OpenButton/Mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 9.51848, 0, 0.0413613, 0.3, 1, 9.42, 0, 0.041, 0.6, 1, 9.518, 0, 0.041)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fabricator/Door")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.6, 1, 0.0110228, -0.107835, 0, 2.5, 1, 0.011, 6, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ofe6l"]
 _data = {
@@ -234,11 +234,11 @@ collision_mask = 3
 script = ExtResource("1_08dwg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.02941, -3.561)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.02941, -3.44132)
 shape = SubResource("BoxShape3D_a6bci")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.11498, 3.56002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.11498, 3.42239)
 shape = SubResource("BoxShape3D_a6bci")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
@@ -279,7 +279,7 @@ libraries = {
 }
 
 [node name="ItemPlacePoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86595, 3.124, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.21481, 3.124, 0)
 
 [node name="InsideArea" type="Area3D" parent="."]
 collision_mask = 2
