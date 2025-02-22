@@ -72,7 +72,7 @@ size = Vector3(2.47414, 0.103894, 0.0518341)
 [node name="ConveyorBeltCornerLeft" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0392098, 0)
 script = ExtResource("1_taypo")
-CONVEYOR_SPEED = 2.0
+CONVEYOR_SPEED = 2.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53682, 2.973, -0.01)

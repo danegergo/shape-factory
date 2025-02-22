@@ -72,7 +72,7 @@ size = Vector3(2.47414, 0.103894, 0.0518341)
 [node name="ConveyorBeltCornerRight" type="StaticBody3D"]
 transform = Transform3D(-4.37114e-08, -0.00174533, -0.999998, 0, 0.999998, -0.00174533, 1, -7.62907e-11, -4.37113e-08, 0, 0.0392098, 0)
 script = ExtResource("1_wtugw")
-CONVEYOR_SPEED = 2.0
+CONVEYOR_SPEED = 2.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53682, 2.973, -0.01)
@@ -115,7 +115,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.4613
 shape = SubResource("BoxShape3D_rbhfk")
 
 [node name="conveyor_belt_corner" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69179, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00688e-17, 1.69179, -8.58563e-10)
 
 [node name="Cube" type="MeshInstance3D" parent="conveyor_belt_corner"]
 material_override = ExtResource("2_qf8ra")

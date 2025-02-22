@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BrackeysGJ_2025.1"
-run/main_scene="res://stage1.tscn"
+run/main_scene="res://menu/menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 

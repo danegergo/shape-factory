@@ -1,0 +1,120 @@
+[gd_scene load_steps=10 format=3 uid="uid://8hsa62s18n7b"]
+
+[ext_resource type="PackedScene" uid="uid://66cq81pae46e" path="res://conveyor_belt/conveyor_belt.tscn" id="1_ex3dp"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_r70m1"]
+[ext_resource type="PackedScene" uid="uid://b4sg0ynhpi1e0" path="res://menu/menu_item.tscn" id="2_dycrq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y7c05"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_qeoye"]
+sky_material = SubResource("ProceduralSkyMaterial_y7c05")
+
+[sub_resource type="Environment" id="Environment_fv1h8"]
+background_mode = 2
+sky = SubResource("Sky_qeoye")
+tonemap_mode = 2
+adjustment_brightness = 1.56
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_maqj0"]
+size = Vector3(1, 1, 2.25671)
+
+[sub_resource type="SystemFont" id="SystemFont_x5n88"]
+font_names = PackedStringArray("Comic Sans MS")
+font_weight = 600
+multichannel_signed_distance_field = true
+
+[sub_resource type="Theme" id="Theme_6t3lj"]
+default_font = SubResource("SystemFont_x5n88")
+default_font_size = 50
+
+[node name="Menu" type="Node3D"]
+script = ExtResource("1_r70m1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fv1h8")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3853, 0, 0)
+size = Vector3(203.446, 1, 63.355)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -13.3125, 0, -30.7496)
+size = Vector3(225.748, 1, 63.355)
+
+[node name="ConveyorBelt" parent="." instance=ExtResource("1_ex3dp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.45456, 0.5, -5.24479)
+
+[node name="ConveyorBelt2" parent="." instance=ExtResource("1_ex3dp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4546, 0.5, -5.24479)
+
+[node name="ConveyorBelt3" parent="." instance=ExtResource("1_ex3dp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.54544, 0.5, -5.24479)
+
+[node name="ConveyorBelt4" parent="." instance=ExtResource("1_ex3dp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5454, 0.5, -5.24479)
+
+[node name="ConveyorBelt5" parent="." instance=ExtResource("1_ex3dp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4546, 0.5, -5.24479)
+
+[node name="ConveyorBelt6" parent="." instance=ExtResource("1_ex3dp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5454, 0.5, -5.24479)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.959403, 0.28204, 0, -0.28204, 0.959403, 0, 6.42223, 7.03133)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.944875, 0.327432, 0, -0.327432, 0.944875, 0, 81.5779, 107.765)
+light_energy = 0.3
+shadow_enabled = true
+
+[node name="Item" parent="." instance=ExtResource("2_dycrq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.0188, 3.4735, -5.24626)
+
+[node name="Item3" parent="." instance=ExtResource("2_dycrq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2026, 3.4735, -5.24626)
+
+[node name="Item5" parent="." instance=ExtResource("2_dycrq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0658, 3.4735, -5.24626)
+
+[node name="Item7" parent="." instance=ExtResource("2_dycrq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56138, 3.4735, -5.24626)
+
+[node name="Item9" parent="." instance=ExtResource("2_dycrq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77689, 3.4735, -5.24626)
+
+[node name="Item10" parent="." instance=ExtResource("2_dycrq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9046, 3.4735, -5.24626)
+
+[node name="Item11" parent="." instance=ExtResource("2_dycrq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.8123, 3.4735, -5.24626)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5809, 3.46053, -5.47165)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.875132, 0, 0.217712)
+shape = SubResource("BoxShape3D_maqj0")
+
+[node name="RespawnPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7443, 5.09383, -5.29577)
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -107.0
+offset_top = -266.0
+offset_right = 106.0
+offset_bottom = -168.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_6t3lj")
+text = "Start"
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

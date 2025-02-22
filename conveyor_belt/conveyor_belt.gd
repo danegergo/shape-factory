@@ -4,11 +4,11 @@ extends StaticBody3D
 
 @export var CONVEYOR_SPEED := 5.0
 
-func _on_belt_area_body_entered(item: Item) -> void:
+func _on_belt_area_body_entered(item: Node3D) -> void:
 	item.conveyor_direction = self.transform.basis.x * CONVEYOR_SPEED
 	item.conveyor_count += 1
 
-func _on_belt_area_body_exited(item: Item) -> void:
+func _on_belt_area_body_exited(item: Node3D) -> void:
 	item.conveyor_count -= 1 
 
 func move_objects_on_belt(delta: float) -> void:
