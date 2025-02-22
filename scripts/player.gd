@@ -17,14 +17,7 @@ var last_item_looked_at: Item
 var is_using_lever := false
 
 func _process(delta: float) -> void:
-	var ray_cast_hit = ray_cast_3d.get_collider()
-	if ray_cast_hit and ray_cast_hit.collision_layer == 2:
-		ray_cast_hit.highlight()
-		last_item_looked_at = ray_cast_hit
-	elif last_item_looked_at:
-		last_item_looked_at.un_highlight()
-		last_item_looked_at = null
-		
+	highlight_item_looked_at()
 		
 	if Input.is_action_just_pressed("use"):
 		handle_use_action()
@@ -100,3 +93,14 @@ func handle_lever_pull(delta: float) -> void:
 		ray_cast_hit.rotate_z(rotation_angle)
 	elif final_lever_rotation_z < -70:
 		ray_cast_hit.owner.fabricate()
+
+func highlight_item_looked_at() -> void:
+	var ray_cast_hit = ray_cast_3d.get_collider()
+	if ray_cast_hit and ray_cast_hit.collision_layer == 2:
+		ray_cast_hit.highlight()
+		if last_item_looked_at and last_item_looked_at != ray_cast_hit:
+			last_item_looked_at.un_highlight()
+		last_item_looked_at = ray_cast_hit
+	elif last_item_looked_at:
+		last_item_looked_at.un_highlight()
+		last_item_looked_at = null

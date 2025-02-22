@@ -1,16 +1,19 @@
-[gd_scene load_steps=9 format=4 uid="uid://66cq81pae46e"]
+[gd_scene load_steps=10 format=4 uid="uid://66cq81pae46e"]
 
 [ext_resource type="Script" path="res://conveyor_belt/conveyor_belt.gd" id="1_8ulhh"]
 [ext_resource type="Material" uid="uid://byel40iv30re8" path="res://materials/material2.tres" id="2_vu2a2"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_eh7cf"]
-size = Vector3(10, 0.001, 2.539)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ppsya"]
+size = Vector3(9.93462, 0.001, 2.539)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_o4y80"]
-size = Vector3(10, 3.158, 0.001)
+[sub_resource type="BoxShape3D" id="BoxShape3D_qde1y"]
+size = Vector3(9.92197, 3.158, 0.001)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_083t0"]
-size = Vector3(10, 0.1, 2.544)
+[sub_resource type="BoxShape3D" id="BoxShape3D_vjx8x"]
+size = Vector3(9.89706, 3.158, 0.001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_thv0s"]
+size = Vector3(9.98351, 0.1, 2.544)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2wvq"]
 resource_name = "Material.001"
@@ -54,26 +57,27 @@ shadow_mesh = SubResource("ArrayMesh_jl74r")
 
 [node name="ConveyorBelt" type="StaticBody3D"]
 script = ExtResource("1_8ulhh")
+CONVEYOR_SPEED = 2.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.973, -0.01)
-shape = SubResource("BoxShape3D_eh7cf")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00592911, 2.973, -0.01)
+shape = SubResource("BoxShape3D_ppsya")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58572, -1.47741)
-shape = SubResource("BoxShape3D_o4y80")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0126191, 1.58572, -1.47741)
+shape = SubResource("BoxShape3D_qde1y")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58774, 1.48105)
-shape = SubResource("BoxShape3D_o4y80")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000167966, 1.58774, 1.48105)
+shape = SubResource("BoxShape3D_vjx8x")
 
 [node name="BeltArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.48359, 0)
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BeltArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.46, -0.013)
-shape = SubResource("BoxShape3D_083t0")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0062815, -1.46, -0.013)
+shape = SubResource("BoxShape3D_thv0s")
 
 [node name="conveyor_belt" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70093, 0)

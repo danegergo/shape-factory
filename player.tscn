@@ -19,6 +19,7 @@ SPINT_RECHARGE_RATE = 0.2
 
 [node name="Camera3D" type="Camera3D" parent="."]
 current = true
+far = 200.0
 script = ExtResource("2_5syds")
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]

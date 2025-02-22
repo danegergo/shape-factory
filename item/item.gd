@@ -4,6 +4,7 @@ class_name Item
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 @onready var box_outline: MeshInstance3D = $MeshInstance3D/BoxOutline
 @onready var prism_outline: MeshInstance3D = $MeshInstance3D/PrismOutline
+@onready var cylinder_outline: MeshInstance3D = $MeshInstance3D/CylinderOutline
 
 var is_picked_up := false
 var is_highlighted := false
@@ -42,6 +43,8 @@ func highlight() -> void:
 		box_outline.visible = true
 	elif mesh_instance_3d.mesh is PrismMesh:
 		prism_outline.visible = true
+	elif mesh_instance_3d.mesh is TubeTrailMesh:
+		cylinder_outline.visible = true
 	is_highlighted = true
 		
 func un_highlight() -> void:
@@ -52,4 +55,6 @@ func un_highlight() -> void:
 		box_outline.visible = false
 	elif mesh_instance_3d.mesh is PrismMesh:
 		prism_outline.visible = false
+	elif mesh_instance_3d.mesh is TubeTrailMesh:
+		cylinder_outline.visible = false
 	is_highlighted = false
