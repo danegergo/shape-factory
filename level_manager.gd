@@ -94,14 +94,20 @@ func process_arrived_item(display: MeshInstance3D, small_display: MeshInstance3D
 	items_delivered += 1
 	score.text = "Items delivered: " + str(items_delivered)
 	play_score_increase_animation()
+	MIN_SPAWN_DELAY -= 0.1
+	MAX_SPAWN_DELAY -= 0.1
 	set_display(display, { "shape": small_display.mesh.get_class(), "color": small_display.material_override.albedo_color })
 	var next_item_data = item_queue.pop_front()
 	if next_item_data:
 		set_display(small_display, next_item_data)
+	else:
+		set_display(small_display, { "shape": "PlaceholderMesh", "color": "#ffffff" })
 	item.queue_free()
 		
 func set_display(display: MeshInstance3D, data: Dictionary) -> void:
 	match data.shape:
+		"PlaceholderMesh":
+			display.mesh = PlaceholderMesh.new()
 		"BoxMesh":
 			display.mesh = BoxMesh.new()
 			display.rotation.x = 0

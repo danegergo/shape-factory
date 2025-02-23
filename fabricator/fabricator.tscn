@@ -1,9 +1,9 @@
-[gd_scene load_steps=32 format=4 uid="uid://d3pfwmklj5onn"]
+[gd_scene load_steps=30 format=4 uid="uid://d3pfwmklj5onn"]
 
 [ext_resource type="Texture2D" uid="uid://c8jwsgmkl134a" path="res://fabricator/fabricator_Untitled.png" id="1_2gd3m"]
 [ext_resource type="Script" path="res://scripts/fabricator.gd" id="1_08dwg"]
 [ext_resource type="Material" uid="uid://byel40iv30re8" path="res://materials/material2.tres" id="2_5hok7"]
-[ext_resource type="AudioStream" uid="uid://c1gi7ejyca2pv" path="res://fabricator/fabricate.wav" id="2_gq2i8"]
+[ext_resource type="AudioStream" uid="uid://beyjjvuaj0kwm" path="res://fabricator/fabricate.mp3" id="2_6ydn8"]
 [ext_resource type="Material" uid="uid://c1l6qvkid4c5r" path="res://materials/material1.tres" id="3_bsnxw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a6bci"]
@@ -29,7 +29,7 @@ size = Vector3(4.94089, 5.37085, 0.1)
 
 [sub_resource type="Animation" id="Animation_vsqe4"]
 resource_name = "close"
-length = 9.8
+length = 8.8
 step = 0.1
 tracks/0/type = "rotation_3d"
 tracks/0/imported = false
@@ -37,14 +37,14 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("fabricator/Lever")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(7.9, 1, 0, 0, -0.574, 0.819, 9.8, 1, 0, 0, 0, 1)
+tracks/0/keys = PackedFloat32Array(7.4, 1, 0, 0, -0.574, 0.819, 8.8, 1, 0, 0, 0, 1)
 tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("fabricator/Door")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0.011, 6, 0, 1.9, 1, 0.0110228, -0.107835, 0)
+tracks/1/keys = PackedFloat32Array(0, 1, 0.011, 6, 0, 1.4, 1, 0.0110228, -0.107835, 0, 7.4, 1, 0.0110228, -0.107835, 0, 8.8, 1, 0.011, 6, 0)
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
@@ -53,9 +53,9 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "clips": [{
-"end_offset": 67.3707,
-"start_offset": 0.0,
-"stream": ExtResource("2_gq2i8")
+"end_offset": 49.6824,
+"start_offset": 0.33,
+"stream": ExtResource("2_6ydn8")
 }],
 "times": PackedFloat32Array(1.9)
 }
@@ -68,20 +68,31 @@ step = 0.1
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("fabricator/OpenButton/Mesh")
+tracks/0/path = NodePath("fabricator/Door")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 9.51848, 0, 0.0413613, 0.3, 1, 9.42, 0, 0.041, 0.6, 1, 9.518, 0, 0.041)
+tracks/0/keys = PackedFloat32Array(0.6, 1, 0.0110228, -0.107835, 0, 2.5, 1, 0.011, 6, 0)
+
+[sub_resource type="Animation" id="Animation_17i7f"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fabricator/Lever")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("fabricator/Door")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0.6, 1, 0.0110228, -0.107835, 0, 2.5, 1, 0.011, 6, 0)
+tracks/1/keys = PackedFloat32Array(0, 1, 0.011, 6, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ofe6l"]
 _data = {
+"RESET": SubResource("Animation_17i7f"),
 "fabricate": SubResource("Animation_vsqe4"),
 "open": SubResource("Animation_8crsg")
 }
@@ -174,41 +185,6 @@ cull_mode = 2
 albedo_texture = ExtResource("1_2gd3m")
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_vcsxg"]
-_surfaces = [{
-"aabb": AABB(-5.44627, -1.43722, 1.90836, 0.400901, 0.458193, 1.15126),
-"format": 34896613377,
-"index_count": 84,
-"index_data": PackedByteArray("CAACAAsACAABAAIACQANAAwADQAPAA4ADwALAAoACwAJAAgACQAPAA0ADwAJAAsADwADAAYADwAKAAMABQABAAAAAQADAAIAAwAHAAYABwAFAAQABQADAAEAAwAFAAcABAAOAAcABAANAA4ADAAEAAUADAANAAQABgAOAA8ABgAHAA4AAAAIAAkAAAABAAgACgACAAMACgALAAIABQAJAAwABQAAAAkA"),
-"name": "Material.004",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 16,
-"vertex_data": PackedByteArray("AAAAAHvxAAAAAHgk//8AAAAAhtv//wAAAAD//3vxAAAAAHgkAAAAAAAAAACDDgAAAAD//4MOAAAAAIbbAAAAAP//eCT//wAA//8AAHvxAAD/////e/EAAP//htv//wAA//8AAIMOAAD//3gkAAAAAP//htsAAAAA/////4MOAAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_o56ts"]
-resource_name = "fabricator_Cube_001"
-_surfaces = [{
-"aabb": AABB(-5.44627, -1.43722, 1.90836, 0.400901, 0.458193, 1.15126),
-"attribute_data": PackedByteArray("///Inyne8X+7gcif//9RpP//UaTrf1Gk//8Vu/rfdd/rfxW7Kd513ynedd+7gZ+/8J9RpPCfUaTwn1Gk8J/In8XB8X8fnsifxcF138XBdd8fnp+/8J8Vu/W/dd/wnxW7+t9RpPrfUaTcg7H7+t/InyneyJ/qh///Kd6fvynen7/qh8nh+t8Vu/rfn7/cgxfm9b/In8XByJ9Qx///9b9RpPW/UaRey7H79b8Vu/W/n79eyxfmxcGfv8XBn79Qx8nh"),
-"format": 34896613399,
-"index_count": 84,
-"index_data": PackedByteArray("GAAGACEAGAADAAYAHQApACYAKQAvACwALwAjACAAIwAdABoAHQAvACkALwAdACMALgAKABMALgAfAAoAEQAFAAIABQALAAgACwAXABQAFwARAA4AEQALAAUACwARABcADAAqABUADAAnACoAJAANAA8AJAAoAA0AEgArAC0AEgAWACsAAAAZABsAAAAEABkAHgAHAAkAHgAiAAcAEAAcACUAEAABABwA"),
-"material": SubResource("StandardMaterial3D_pmcja"),
-"name": "Material.004",
-"primitive": 3,
-"uv_scale": Vector4(1.99841, 2.00972, 0, 0),
-"vertex_count": 48,
-"vertex_data": PackedByteArray("AAAAAHvx//8AAAAAe/FU1QAAAAB78f//AAB4JP////8AAHgk/////wAAeCT/////AACG2/////8AAIbb///8xQAAhtv/////AAD//3vx/MUAAP//e/FU1QAA//978f//AAB4JAAA//8AAHgkAAD/3wAAeCQAAP//AAAAAIMO/98AAAAAgw5U1QAAAACDDv//AAD//4MOqukAAP//gw5U1QAA//+DDv//AACG2wAA//8AAIbbAACq6QAAhtsAAP////94JP///////3gk////////eCT///+///8AAHvx/////wAAe/FU1f//AAB78f+//////3vx/MX/////e/FU1f////978f+///+G2////////4bb///8xf//htv///+///8AAIMO/9///wAAgw5U1f//AACDDv+///94JAAA/////3gkAAD/3///eCQAAP+///+G2wAA/////4bbAACq6f//htsAAP+//////4MOqun/////gw5U1f////+DDv+//3+CWqoqVNX/P/9//3//f/9/glr/P/9//3//f/6c/pz/P/9//pz+nKmqqqr/P/9//v//fwAA/3//P/9/AAD/f6oqVNX/P/9/BLUEtamqqqr/P/9//v//fwS1BLX/P/9//3//f/9/glr/fwAA/3+CWqoqVNX/fwAA/pz+nKmqqqr/fwAA/3//f/6c/pz/fwAAAAD/f6oqVNX/fwAA////fwAA/3//fwAA////fwS1BLX/fwAABLUEtamqqqr/fwAA")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_vcsxg")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_xvdjy"]
-size = Vector3(0.265137, 0.463928, 1.1582)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_q5x3j"]
 _surfaces = [{
 "aabb": AABB(-0.83193, -0.11628, -1.34774, 2.55031, 0.232, 2.18841),
@@ -298,6 +274,11 @@ libraries = {
 "": SubResource("AnimationLibrary_ofe6l")
 }
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+volume_db = -5.0
+max_db = 1.0
+max_distance = 20.0
+
 [node name="ItemPlacePoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.21481, 3.124, 0)
 
@@ -316,7 +297,7 @@ material_override = ExtResource("2_5hok7")
 mesh = SubResource("ArrayMesh_q1jfq")
 
 [node name="Door" type="StaticBody3D" parent="fabricator"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0110228, -0.107835, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011, 6, 0)
 
 [node name="Door" type="MeshInstance3D" parent="fabricator/Door"]
 material_override = ExtResource("3_bsnxw")
@@ -326,19 +307,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="fabricator/Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25363, -0.0653238, 0)
 shape = SubResource("BoxShape3D_ai1e4")
-
-[node name="OpenButton" type="StaticBody3D" parent="fabricator"]
-collision_layer = 4
-collision_mask = 0
-
-[node name="Mesh" type="MeshInstance3D" parent="fabricator/OpenButton"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.518, 0, 0.041)
-mesh = SubResource("ArrayMesh_o56ts")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fabricator/OpenButton"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.33214, -1.20902, 2.52372)
-shape = SubResource("BoxShape3D_xvdjy")
 
 [node name="Lever" type="StaticBody3D" parent="fabricator"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.614, -1.22, -2.519)
@@ -367,6 +335,3 @@ material = ExtResource("3_bsnxw")
 [node name="ItemDisplay" type="MeshInstance3D" parent="CSGBox3D3/CSGBox3D4"]
 transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, -7.21775e-09, -0.000555992, -0.527672)
 mesh = SubResource("PlaceholderMesh_tv03u")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-max_distance = 30.0

@@ -1,0 +1,6 @@
+<svg viewBox="-50 -50 230 230" xmlns="http://www.w3.org/2000/svg">
+	<rect x="-50" y="-50" width="230" height="230" fill="white"/>
+	<polygon points="0,17 65,-28 65,140 0,92" fill="darkred"/>
+	<polygon points="65,-28 130,17 130,92 65,140" fill="red"/>
+	<polygon points="0,17 65,-28 130,17 65,62" fill="firebrick"/>
+</svg>

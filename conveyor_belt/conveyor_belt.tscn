@@ -91,7 +91,7 @@ mesh = SubResource("ArrayMesh_dngbg")
 stream = ExtResource("3_jwexp")
 volume_db = 6.0
 max_db = 6.0
-pitch_scale = 40.0
+pitch_scale = 1.5
 autoplay = true
 max_distance = 30.0
 

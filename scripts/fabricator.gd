@@ -6,7 +6,7 @@ extends StaticBody3D
 @onready var inside_area: Area3D = $InsideArea
 @onready var item_display: MeshInstance3D = $CSGBox3D3/CSGBox3D4/ItemDisplay
 
-var is_open := false
+var is_open := true
 
 func _ready() -> void:
 	match output:
@@ -32,8 +32,9 @@ func fabricate() -> void:
 		return
 		
 	animation_player.play("fabricate")
-	is_open = false
 	var animation_length = animation_player.get_animation("fabricate").length
+	is_open = false
+	get_tree().create_timer(animation_length).timeout.connect(func(): is_open = true)
 	
 	if inside_area.has_overlapping_bodies():
 		get_tree().create_timer(animation_length / 2).timeout.connect(set_item_mesh)

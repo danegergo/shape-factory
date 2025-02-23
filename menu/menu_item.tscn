@@ -3,12 +3,13 @@
 [ext_resource type="Script" path="res://scripts/menu_item.gd" id="1_hve25"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mds6"]
+albedo_color = Color(0.960784, 0.258824, 0.329412, 1)
 
-[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_nd2tl"]
+[sub_resource type="BoxMesh" id="BoxMesh_8yhsw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o57r4"]
 
-[node name="Item" type="RigidBody3D"]
+[node name="MenuItem" type="RigidBody3D"]
 collision_layer = 2
 sleeping = true
 lock_rotation = true
@@ -17,7 +18,7 @@ script = ExtResource("1_hve25")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.758997, 0)
 material_override = SubResource("StandardMaterial3D_1mds6")
-mesh = SubResource("TubeTrailMesh_nd2tl")
+mesh = SubResource("BoxMesh_8yhsw")
 skeleton = NodePath("")
 
 [node name="AABB_CollisionShape3D" type="CollisionShape3D" parent="."]
