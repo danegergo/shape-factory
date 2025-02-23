@@ -21,6 +21,7 @@ config/icon="res://game_icon.svg"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 
 [editor_plugins]
 
@@ -79,4 +80,5 @@ common/physics_ticks_per_second=90
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 lights_and_shadows/positional_shadow/atlas_size=10000

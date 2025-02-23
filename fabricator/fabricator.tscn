@@ -26,6 +26,23 @@ size = Vector3(0.001, 5.59982, 3.49951)
 [sub_resource type="BoxShape3D" id="BoxShape3D_tli5c"]
 size = Vector3(4.94089, 5.37085, 0.1)
 
+[sub_resource type="Animation" id="Animation_17i7f"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fabricator/Lever")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fabricator/Door")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.011, 6, 0)
+
 [sub_resource type="Animation" id="Animation_vsqe4"]
 resource_name = "close"
 length = 8.8
@@ -67,23 +84,6 @@ tracks/0/path = NodePath("fabricator/Door")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0.6, 1, 0.0110228, -0.107835, 0, 2.5, 1, 0.011, 6, 0)
-
-[sub_resource type="Animation" id="Animation_17i7f"]
-length = 0.001
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("fabricator/Lever")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("fabricator/Door")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0.011, 6, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ofe6l"]
 _data = {
@@ -215,7 +215,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_q5x3j")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_15s1d"]
-size = Vector3(1.18665, 0.21582, 0.119415)
+size = Vector3(1.46736, 1.67711, 0.809084)
 
 [sub_resource type="PlaceholderMesh" id="PlaceholderMesh_tv03u"]
 
@@ -312,7 +312,7 @@ mesh = SubResource("ArrayMesh_6e8mr")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fabricator/Lever"]
-transform = Transform3D(0.79451, -0.607251, 0, 0.607251, 0.79451, 0, 0, 0, 1, 1.18342, 0.895468, 0)
+transform = Transform3D(0.79451, -0.607251, 0, 0.607251, 0.79451, 0, 0, 0, 1, 1.33554, 0.927569, -0.0492682)
 shape = SubResource("BoxShape3D_15s1d")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
