@@ -1,9 +1,8 @@
-[gd_scene load_steps=30 format=4 uid="uid://d3pfwmklj5onn"]
+[gd_scene load_steps=29 format=4 uid="uid://d3pfwmklj5onn"]
 
 [ext_resource type="Texture2D" uid="uid://c8jwsgmkl134a" path="res://fabricator/fabricator_Untitled.png" id="1_2gd3m"]
 [ext_resource type="Script" path="res://scripts/fabricator.gd" id="1_08dwg"]
 [ext_resource type="Material" uid="uid://byel40iv30re8" path="res://materials/material2.tres" id="2_5hok7"]
-[ext_resource type="AudioStream" uid="uid://beyjjvuaj0kwm" path="res://fabricator/fabricate.mp3" id="2_6ydn8"]
 [ext_resource type="Material" uid="uid://c1l6qvkid4c5r" path="res://materials/material1.tres" id="3_bsnxw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a6bci"]
@@ -47,17 +46,13 @@ tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0.011, 6, 0, 1.4, 1, 0.0110228, -0.107835, 0, 7.4, 1, 0.0110228, -0.107835, 0, 8.8, 1, 0.011, 6, 0)
 tracks/2/type = "audio"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("AudioStreamPlayer3D")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"clips": [{
-"end_offset": 49.6824,
-"start_offset": 0.33,
-"stream": ExtResource("2_6ydn8")
-}],
-"times": PackedFloat32Array(1.9)
+"clips": [],
+"times": PackedFloat32Array()
 }
 tracks/2/use_blend = true
 
@@ -275,9 +270,8 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-volume_db = -5.0
-max_db = 1.0
-max_distance = 20.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.53091, 0)
+max_distance = 10.0
 
 [node name="ItemPlacePoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.21481, 3.124, 0)

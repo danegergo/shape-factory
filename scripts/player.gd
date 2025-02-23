@@ -4,7 +4,7 @@ class_name Player
 @onready var ray_cast_3d: RayCast3D = $Camera3D/RayCast3D
 @onready var hold_point: Node3D = $HoldPoint
 @onready var main_scene: Node3D = $".."
-@onready var sprint_bar: ProgressBar = $UI/SprintBar
+@onready var sprint_bar: ProgressBar = $SprintBar
 @onready var timer: Timer = $Timer
 
 @export var SPEED := 15.0

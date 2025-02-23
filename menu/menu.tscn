@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://66cq81pae46e" path="res://conveyor_belt/conveyor_belt.tscn" id="1_ex3dp"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_r70m1"]
 [ext_resource type="PackedScene" uid="uid://b4sg0ynhpi1e0" path="res://menu/menu_item.tscn" id="2_dycrq"]
+[ext_resource type="FontFile" uid="uid://dwkui3lo31xfq" path="res://ComicNeue-Bold.ttf" id="4_0maey"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y7c05"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -20,13 +21,8 @@ adjustment_brightness = 1.56
 [sub_resource type="BoxShape3D" id="BoxShape3D_maqj0"]
 size = Vector3(1, 1, 2.25671)
 
-[sub_resource type="SystemFont" id="SystemFont_x5n88"]
-font_names = PackedStringArray("Comic Sans MS")
-font_weight = 600
-multichannel_signed_distance_field = true
-
 [sub_resource type="Theme" id="Theme_6t3lj"]
-default_font = SubResource("SystemFont_x5n88")
+default_font = ExtResource("4_0maey")
 default_font_size = 50
 
 [node name="Menu" type="Node3D"]

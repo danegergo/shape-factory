@@ -14,7 +14,7 @@ extends Node3D
 @onready var items: Node3D = $Items
 @onready var score: RichTextLabel = $UI/Score
 @onready var game_over: RichTextLabel = $UI/GameOver
-@onready var player_ui: Control = $Player/UI
+@onready var player_ui: ProgressBar = $Player/SprintBar
 
 const item_scene: PackedScene = preload("res://item/item.tscn")
 
@@ -121,5 +121,5 @@ func set_display(display: MeshInstance3D, data: Dictionary) -> void:
 
 func play_score_increase_animation():
 	var tween: Tween = get_tree().create_tween()
-	tween.tween_property(score, "scale", 2.1 * Vector2.ONE, 0.2)
-	tween.tween_property(score, "scale", 1.8 * Vector2.ONE, 0.2)
+	tween.tween_property(score, "scale", 1.3 * Vector2.ONE, 0.2)
+	tween.tween_property(score, "scale", Vector2.ONE, 0.2)

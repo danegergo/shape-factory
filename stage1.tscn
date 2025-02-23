@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ococlv6nppei" path="res://player.tscn" id="1_3ds22"]
 [ext_resource type="Script" path="res://level_manager.gd" id="1_6uemr"]
 [ext_resource type="PackedScene" uid="uid://66cq81pae46e" path="res://conveyor_belt/conveyor_belt.tscn" id="2_g8fnw"]
+[ext_resource type="FontFile" uid="uid://dwkui3lo31xfq" path="res://ComicNeue-Bold.ttf" id="3_v5pje"]
 [ext_resource type="PackedScene" uid="uid://d3pfwmklj5onn" path="res://fabricator/fabricator.tscn" id="4_f16n8"]
 [ext_resource type="PackedScene" uid="uid://brhtnfmaq24gq" path="res://conveyor_belt/conveyor_belt_corner_left.tscn" id="4_icgp5"]
 [ext_resource type="PackedScene" uid="uid://dyxiacs3mgcxm" path="res://conveyor_belt/conveyor_belt_corner_right.tscn" id="5_0jfns"]
@@ -26,24 +27,19 @@ tonemap_mode = 2
 tonemap_exposure = 0.8
 adjustment_enabled = true
 
-[sub_resource type="SystemFont" id="SystemFont_x5n88"]
-font_names = PackedStringArray("Comic Sans MS")
-font_weight = 600
-multichannel_signed_distance_field = true
-
 [sub_resource type="Theme" id="Theme_ce6x4"]
-default_font = SubResource("SystemFont_x5n88")
+default_font = ExtResource("3_v5pje")
+default_font_size = 34
 
 [sub_resource type="Theme" id="Theme_hqgkt"]
-default_font = SubResource("SystemFont_x5n88")
+default_font = ExtResource("3_v5pje")
+default_font_size = 105
 
-[sub_resource type="SystemFont" id="SystemFont_ue14s"]
-font_names = PackedStringArray("Comic Sans MS")
-font_weight = 600
-multichannel_signed_distance_field = true
+[sub_resource type="Theme" id="Theme_o68vq"]
+default_font = ExtResource("3_v5pje")
 
 [sub_resource type="Theme" id="Theme_66m5y"]
-default_font = SubResource("SystemFont_ue14s")
+default_font = ExtResource("3_v5pje")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6gsd"]
 albedo_color = Color(0.8, 0.356863, 0.356863, 1)
@@ -88,7 +84,7 @@ environment = SubResource("Environment_3qf37")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 process_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.9617, 33.6129, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.9617, 33.6112, 0)
 light_energy = 16.0
 light_specular = 0.4
 shadow_enabled = true
@@ -105,18 +101,19 @@ SPINT_RECHARGE_RATE = 0.3
 [node name="UI" type="Control" parent="."]
 process_mode = 1
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1800.0
-offset_bottom = 1012.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Score" type="RichTextLabel" parent="UI"]
 process_mode = 1
 layout_mode = 0
-offset_left = 18.0
+offset_left = 31.0
 offset_top = 20.0
-offset_right = 292.0
-offset_bottom = 60.0
-scale = Vector2(1.8, 1.8)
+offset_right = 1280.0
+offset_bottom = 70.0
 theme = SubResource("Theme_ce6x4")
 text = "Items delivered: 0"
 fit_content = true
@@ -130,15 +127,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -294.0
-offset_top = -165.0
-offset_right = -202.0
-offset_bottom = -94.0
+offset_left = -640.0
+offset_top = -176.0
+offset_right = 640.0
+offset_bottom = 252.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(6.555, 6.555)
 theme = SubResource("Theme_hqgkt")
-text = "Game Over!"
+bbcode_enabled = true
+text = "[center]Game Over!"
 fit_content = true
 
 [node name="Button" type="Button" parent="UI/GameOver"]
@@ -149,13 +146,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -15.1838
-offset_top = 4.01183
-offset_right = 51.8162
-offset_bottom = 35.0118
+offset_left = -103.0
+offset_top = 24.0
+offset_right = 353.0
+offset_bottom = 206.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.455, 0.455)
+theme = SubResource("Theme_o68vq")
 text = "Restart"
 
 [node name="Score" type="RichTextLabel" parent="UI/GameOver"]
@@ -166,10 +164,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.4394
-offset_top = -11.2437
-offset_right = 119.561
-offset_bottom = 28.7563
+offset_left = -156.0
+offset_top = -68.0
+offset_right = 846.0
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.4, 0.4)

@@ -13,12 +13,14 @@ config_version=5
 config/name="Shape Factory"
 run/main_scene="res://menu/menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.188235, 0.219608, 0.329412, 1)
+boot_splash/image="res://splash_screen_image.png"
+config/icon="res://game_icon.svg"
 
 [display]
 
-window/size/viewport_width=1800
-window/size/viewport_height=1012
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [editor_plugins]
 
