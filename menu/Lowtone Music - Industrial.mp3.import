@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4foruc6woxiq"
+path="res://.godot/imported/Lowtone Music - Industrial.mp3-a303a290e4937dd60f9723c411d2568a.mp3str"
+
+[deps]
+
+source_file="res://menu/Lowtone Music - Industrial.mp3"
+dest_files=["res://.godot/imported/Lowtone Music - Industrial.mp3-a303a290e4937dd60f9723c411d2568a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

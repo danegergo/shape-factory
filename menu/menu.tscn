@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://8hsa62s18n7b"]
+[gd_scene load_steps=11 format=3 uid="uid://8hsa62s18n7b"]
 
 [ext_resource type="PackedScene" uid="uid://66cq81pae46e" path="res://conveyor_belt/conveyor_belt.tscn" id="1_ex3dp"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_r70m1"]
 [ext_resource type="PackedScene" uid="uid://b4sg0ynhpi1e0" path="res://menu/menu_item.tscn" id="2_dycrq"]
 [ext_resource type="FontFile" uid="uid://dwkui3lo31xfq" path="res://ComicNeue-Bold.ttf" id="4_0maey"]
+[ext_resource type="AudioStream" uid="uid://4foruc6woxiq" path="res://menu/Lowtone Music - Industrial.mp3" id="5_4rr53"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y7c05"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -111,6 +112,11 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_6t3lj")
 text = "Start"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_4rr53")
+volume_db = -30.0
+autoplay = true
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

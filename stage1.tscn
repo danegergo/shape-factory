@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://s100ffyr4t4b"]
+[gd_scene load_steps=30 format=3 uid="uid://s100ffyr4t4b"]
 
 [ext_resource type="PackedScene" uid="uid://ococlv6nppei" path="res://player.tscn" id="1_3ds22"]
 [ext_resource type="Script" path="res://level_manager.gd" id="1_6uemr"]
@@ -11,6 +11,7 @@
 [ext_resource type="Material" uid="uid://c1l6qvkid4c5r" path="res://materials/material1.tres" id="5_h8ati"]
 [ext_resource type="Material" uid="uid://byel40iv30re8" path="res://materials/material2.tres" id="5_toec6"]
 [ext_resource type="PackedScene" uid="uid://dsnvdyuyxwryo" path="res://pipe/pipe.tscn" id="10_4a8f0"]
+[ext_resource type="AudioStream" uid="uid://4foruc6woxiq" path="res://menu/Lowtone Music - Industrial.mp3" id="12_oax48"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_asw3o"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -449,6 +450,11 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 49.319
 
 [node name="Items" type="Node3D" parent="."]
 process_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_oax48")
+volume_db = -30.0
+autoplay = true
 
 [connection signal="pressed" from="UI/GameOver/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="ItemSpawnPoints/SpawnPoint1/SpawnTimer1" to="." method="_on_spawn_timer_timeout"]
